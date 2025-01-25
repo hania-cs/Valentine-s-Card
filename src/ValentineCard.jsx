@@ -6,14 +6,14 @@ function ValentineCard({ onYesClick, onNoClick }) {
       <h1>Be My Valentine?</h1>
       <p className="romantic-message">
         In the crimson depths of my heart, your love shines like a brilliant star. Every moment with you is a treasure
-        beyond compare. Will you be mine, now and forever?
+        beyond compare. Will you be my valentine, now and forever?
       </p>
       <div className="button-container">
         <button className="yes-btn" onClick={onYesClick}>
           Yes, I will!
         </button>
         <button className="no-btn" onClick={onNoClick}>
-          I need time
+          hmm..nope
         </button>
       </div>
     </div>
