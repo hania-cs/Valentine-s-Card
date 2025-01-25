@@ -1,0 +1,194 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: #2d0a16;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d0a16;
+}
+
+.live-background {
+  position: fixed; /* Changed to fixed to cover entire viewport */
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff1f62;
+  transform: rotate(45deg);
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.15;
+  filter: blur(1px);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff1f62;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -10px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(45deg);
+  }
+}
+
+.valentine-card {
+  background-color: rgba(45, 10, 22, 0.7);
+  padding: 3rem;
+  border-radius: 24px;
+  text-align: center;
+  z-index: 1;
+  width: min(500px, 90%); /* Responsive width */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 31, 98, 0.3);
+  box-shadow: 0 0 20px rgba(255, 31, 98, 0.2), 0 0 40px rgba(255, 31, 98, 0.1);
+  margin: 20px; /* Add some margin to prevent sticking to edges on mobile */
+}
+
+h1 {
+  color: #ff1f62;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255, 31, 98, 0.5);
+  font-weight: 600;
+}
+
+.romantic-message {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.yes-btn {
+  background-color: #ff1f62;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 31, 98, 0.4);
+}
+
+.yes-btn:hover {
+  background-color: #ff3372;
+  box-shadow: 0 0 20px rgba(255, 31, 98, 0.6);
+  transform: translateY(-2px);
+}
+
+.no-btn {
+  background-color: transparent;
+  color: #ff1f62;
+  border: 1px solid #ff1f62;
+}
+
+.no-btn:hover {
+  background-color: rgba(255, 31, 98, 0.1);
+  transform: translateY(-2px);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(45, 10, 22, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(255, 31, 98, 0.3);
+  z-index: 2;
+  animation: popIn 0.5s ease-out;
+  border: 1px solid rgba(255, 31, 98, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.popup p {
+  font-size: 1.5rem;
+  color: #ff1f62;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 31, 98, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .valentine-card {
+    padding: 2rem;
+    margin: 15px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .romantic-message {
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+

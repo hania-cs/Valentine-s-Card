@@ -1,0 +1,141 @@
+.redirect-page {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d0a16;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .content {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  
+  h1 {
+    color: #ff1f62;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 31, 98, 0.5);
+  }
+  
+  .message-container {
+    margin-bottom: 3rem;
+  }
+  
+  .message {
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-shadow: 0 0 5px rgba(255, 31, 98, 0.3);
+  }
+  
+  .heart-animation {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 2rem auto;
+  }
+  
+  .heart {
+    background-color: #ff1f62;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: pulse 1s infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    background-color: #ff1f62;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .heart::before {
+    top: -25px;
+    left: 0;
+  }
+  
+  .heart::after {
+    top: 0;
+    left: -25px;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+  }
+  
+  .poem-container {
+    background-color: rgba(45, 10, 22, 0.7);
+    padding: 2rem;
+    border-radius: 16px;
+    margin: 2rem auto;
+    max-width: 600px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 31, 98, 0.3);
+  }
+  
+  h2 {
+    color: #ff1f62;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 5px rgba(255, 31, 98, 0.3);
+  }
+  
+  .poem {
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .instructions {
+    color: #ff9eb5;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 600px) {
+    .content {
+      padding: 1.5rem;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    .message {
+      font-size: 1.4rem;
+    }
+  
+    .poem {
+      font-size: 1rem;
+    }
+  }
+  
+  
